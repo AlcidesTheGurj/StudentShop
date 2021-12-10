@@ -6,7 +6,7 @@ Completed:
 <br>-index/home page
 <br>-Products page includes all products
 <br>-Read more functionality utilising session storage
--All pages responsive
+<br>-All pages responsive
 
 To do:
 <br>-Add to cart functionality
