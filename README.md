@@ -3,9 +3,9 @@ UCLan Cyprus student shop assignment
 
 
 Completed:
--index/home page
--Products page includes all products
--Read more functionality utilising session storage
+<br>-index/home page
+<br>-Products page includes all products
+<br>-Read more functionality utilising session storage
 -All pages responsive
 
 To do:
