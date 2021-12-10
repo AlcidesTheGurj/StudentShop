@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #be1622;
+}
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+    padding: 0;
+    width: 100%;
+    background-color: #345;
+    color: ghostwhite;
+    margin-bottom: 0;
+}
+.footerText{
+    display: grid;
+    flex-wrap: wrap;
+    font-size: x-large;
+    margin-right: 5.0em;
+    margin-left: 1.0em;
+    padding-top: 1.5em;
+    padding-left: 1em;
+    padding-bottom: 3em;
+    max-width: 320px;
+}
+.footerText p{
+    font-size: small;
+    margin-top: 0;
+    display: inline-block;
+}
+.footerText a{
+    display: block;
+    color: #007fb0;
+    font-size: small;
+}
+.heading{
+    font-size: x-large;
+}
+
+.logo{
+    padding: 1em;
+    flex:20%;
+}
+#shopText{
+    color: ghostwhite;
+    font-size: xx-large;
+    padding-left: 1.0em;
+}
+
+.myNav{
+    display: flex;
+    flex:80%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 1em;
+    margin-left: auto;
+}
+.navList{
+    text-align:left;
+    font-size: 1.2em;
+    margin: 1em;
+    list-style-type: none;
+}
+.navList a{
+    color: ghostwhite;
+    text-decoration: none;
+}
+.navList a:hover{
+    color:#577A9B;
+}
+.myMenu{
+    list-style-type: none;
+    margin-right: auto;
+    }
+.menuList {
+    width: 1.5em;
+    height: 5px;
+    background-color: #007fb0;
+    margin-top: 5px;
+    display: none;
+}
+#button{
+    background: transparent;
+    border: none;
+    margin:0;
+    float:right;
+    width:25px;
+    height:45px;
+}
+#hiddenMenu{
+    background-color: #577A9B;
+    display: flex;
+    margin-top: 0;
+}
+.hiddenNav{
+    display: none;
+    justify-content: left;
+    flex:80%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0;
+}
+.hiddenList{
+    text-align:left;
+    font-size: 1.2em;
+    margin: 1em;
+    list-style-type: none;
+}
+.hiddenList a{
+    color: ghostwhite;
+    text-decoration: none;
+}
+.hiddenList a:hover{
+    color:slategray;
+}
+.video{
+    max-width: 100%;
+    margin: auto;
+    padding: 1.0em;
+    display: grid;
+}
+iframe{
+    border: 0;
+}
+h1{
+    margin-top: 1.0em;
+    color: #577A9B;
+    font-size: xxx-large;
+}
+h2{
+    font-size: x-large;
+    color: #F2BE1A;
+    text-align: left;
+}
+.content{
+    display: grid;
+    justify-content: center;
+}
+.content p{
+    font-size: large;
+}
+
+/*Products styling*/
+#return {
+    border-style: solid;
+    text-align: center;
+    position: fixed;
+    padding: 25px;
+    margin-top: 20.0em;
+    margin-left:1px;
+    border-radius: 50%;
+    background-color: #577A9B;
+    color: transparent;
+}
+#return a{
+    color: ghostwhite;
+    text-decoration: none;
+}
+.clothes{
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: 250px 250px 250px;
+    justify-content: center;
+}
+
+.image{
+    margin: 1.0em;
+    border: 1px solid #C7CBDA;
+    border-radius: 4px;
+}
+
+.productText{
+    display: grid;
+    font-size: small;
+    background-color: #C7CBDA;
+    padding: 10px 5px 0 5px;
+    height: 400px;
+}
+.productText a{
+    color: #007fb0;
+}
+.description{
+    max-width: 250px;
+    font-size: medium;
+}
+.productText p{
+    text-align: left;
+}
+.buyButton{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+.productText button{
+    width: 50px;
+}
+#jumpMenu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#jumpMenu a{
+    padding: 1.0em;
+    color: #007FB0;
+}
+/*Read more styling*/
+#object {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 1.0em;
+}
+.sessionText{
+    max-width: 700px;
+    font-size: x-large;
+    padding: 0;
+}
+.sessionProductText{
+    display: grid;
+    font-size: small;
+    background-color: #C7CBDA;
+    padding: 0 10px 0 10px;
+}
+.sessionProductText h2{
+    font-size: xx-large;
+}
+
+/*Smaller screens*/
+@media screen and (max-width: 900px) {
+    .myNav .navList
+    {
+        display: none;
+    }
+    .hiddenNav.appear{
+        display: flex;
+        background-color: #919CAD;
+    }
+    .menuList {
+        display: block;
+    }
+    #shopText{
+        font-size: x-large;
+    }
+    .clothes {
+        grid-template-columns: 250px 250px;
+    }
+    h1{
+        font-size: xx-large;
+    }
+    h2{
+        font-size: x-large;
+    }
+    .content p{
+        font-size: medium;
+    }
+    .description{
+        max-width: 200px;
+        font-size: small;
+    }
+    #return{
+        padding: 15px;
+    }
+    .sessionImage{
+        width: 300px;
+        height: 300px;
+    }
+    #sessionImage{
+        width: 600px;
+        height: 600px;
+    }
+    .sessionText{
+        max-width: 600px;
+        font-size: medium;
+        padding: 0;
+    }
+
+}
+/*Even smaller screens*/
+@media screen and (max-width: 600px) {
+    .clothes {
+        grid-template-columns: 250px;
+    }
+    #sessionImage{
+        max-width: 320px;
+        height: 400px;
+    }
+    .sessionText{
+        max-width: 320px;
+        font-size: small;
+        padding: 0;
+    }
+    .sessionProductText{
+        max-width: 320px;
+    }
+}
+
