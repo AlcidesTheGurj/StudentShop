@@ -9,7 +9,7 @@ Completed:
 -All pages responsive
 
 To do:
--Add to cart functionality
+<br>-Add to cart functionality
 
 
 
