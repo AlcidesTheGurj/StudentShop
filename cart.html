@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">    <link rel="stylesheet" type="text/css" href="style1.css" /><!-- link to the stylesheet -->
+    <script src="script.js"></script>
+    <title>Cart</title>
+</head>
+<body>
+<header>
+    <!-- header bar that is going to appear at the top of the screen -->
+    <div class="logo"><img src="uclan.png" alt="UCLan logo">
+        <span id="shopText"><b>Student Shop</b></span>
+    </div>
+
+    <!--Burger Menu-->
+    <div>
+        <button id="burgerButton" onclick="menuFunction()">
+        </button>
+        <ul class="myMenu">
+            <li class="menuList"></li>
+            <li class ="menuList"></li>
+            <li class ="menuList"></li>
+        </ul>
+    </div>
+    <nav> <!-- place the navigation links in a <nav> tag for accessibility purposes -->
+        <ul class="myNav" id="myNavId">
+            <li class="navList"><a href="index.html">Home</a></li> <!-- each list item contains a link (marked by the anchor tag -->
+            <li class="navList"><a href="products.html">Products</a> </li>
+            <li class="navList"><a href="cart.html">Cart</a> </li>
+        </ul>
+    </nav>
+</header>
+<ul class="hiddenNav" id="hiddenNav">
+    <li class="hiddenList"><a href="index.html">Home</a></li> <!-- each list item contains a link (marked by the anchor tag -->
+    <li class="hiddenList"><a href="products.html">Products</a> </li>
+    <li class="hiddenList"><a href="cart.html">Cart</a> </li>
+</ul>
+
+
+
+</body>
+</html>
