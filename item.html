@@ -15,7 +15,7 @@
 
     <!--Burger Menu-->
     <div>
-        <button id="button" onclick="menuFunction()">
+        <button id="burgerButton" onclick="menuFunction()">
         </button>
         <ul class="myMenu">
             <li class="menuList"></li>
@@ -24,24 +24,28 @@
         </ul>
     </div>
 
-    <!--Navigation Links-->
+    <!-- Navigation list-->
     <nav>
         <ul class="myNav" id="myNavId">
-            <li class="navList"><a href="index.html">Home</a></li> <!-- each list item contains a link (marked by the anchor tag -->
+            <li class="navList"><a href="index.html">Home</a></li>
             <li class="navList"><a href="products.html">Products</a> </li>
             <li class="navList"><a href="cart.html">Cart</a> </li>
         </ul>
     </nav>
 </header>
 
+<!--Hidden navigation list for burger menu-->
 <ul class="hiddenNav" id="hiddenNav">
     <li class="hiddenList"><a href="index.html">Home</a></li> <!-- each list item contains a link (marked by the anchor tag -->
     <li class="hiddenList"><a href="products.html">Products</a> </li>
     <li class="hiddenList"><a href="cart.html">Cart</a> </li>
 </ul>
 
+
+<!--Read more content-->
 <div id="object"></div>
 
+<!--The footer-->
 <div class="footer">
     <div  class="footerText">
         <p>
@@ -75,6 +79,7 @@
     </div>
 </div>
 
+<!-- external scripts -->
 <script src="script.js"></script>
 <script src="sessionProduct.js"></script>
 </body>
