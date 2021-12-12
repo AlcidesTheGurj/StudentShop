@@ -1,11 +1,13 @@
+//load array of products from local storage
 var localProducts =  JSON.parse(localStorage.product);
-var quantity = 0;
+var productIndex = 0;
+//showing the product
 localProducts.forEach(product=>{
     document.getElementById("products").innerHTML +=
         "<div class='individualProducts'>"
         +"<br>"
         +"<br>"
-        +quantity
+        +productIndex
         +"</div>"
         +"<div>"
         +"<img src=' "+product.source+" ' width ='75' height='75' alt='logo'>"
@@ -19,7 +21,21 @@ localProducts.forEach(product=>{
         +"<br>"
         +"<br>"
         +product.price
+        +"</div>"
+        +"<div>"
+        +"<a href='' onclick='removeFunction("+productIndex+")'>"
+        +'X'
+        +"</a>"
         +"</div>";
-    quantity++;
+    productIndex++;
 
 });
+//removing product at index, setting array again without that product
+function removeFunction(index){
+    localProducts.splice(index,1);
+    localStorage.setItem('product',JSON.stringify(localProducts))
+}
+//removing whole array
+function clearCart(){
+    localStorage.removeItem("product");
+}
