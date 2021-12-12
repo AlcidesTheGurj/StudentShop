@@ -8,7 +8,7 @@ function menuFunction(){
     }
 }
 
-
+/*3 arrays of objects for each product type*/
 var hoodies = [
     {   type: "UCLan Hoodie (1) - Purple",
         description:"cotton authentic character and practicality are combined in this comfy warm and luxury hoodie for students that goes with everything to create casual looks",
@@ -671,7 +671,7 @@ var jumpers = [
 
 
 /*Adding all t-shirts*/
-/*i used as index for read more function*/
+/*i used as index for read more and buy functions*/
 var i=0;
 tShirts.forEach(
     shirts => {
@@ -690,7 +690,7 @@ tShirts.forEach(
                 + "</p>"
                 + "<p><b>" + shirts.price + "</b> </p>"
                 + "<div class='buyButton'>"
-                + "<button onclick='buyFunction()'>Buy</button>"
+                + "<button onclick='buyFunction("+i+","+1+")'>Buy</button>"
                 + "</div>"
                 + "</div>";
         }
@@ -708,7 +708,7 @@ tShirts.forEach(
                 + "</p>"
                 + "<p><b>" + shirts.price + "</b> </p>"
                 + "<div class='buyButton'>"
-                + "<button onclick='buyFunction()'>Buy</button>"
+                + "<button onclick='buyFunction("+i+","+1+")'>Buy</button>"
                 + "</div>"
                 + "</div>";
         }
@@ -718,11 +718,11 @@ tShirts.forEach(
 
 
 /*Adding all hoodies*/
-/*j used as index for read more function*/
+/*j used as index for read more and buy functions*/
 var j=0;
 hoodies.forEach(
     hoodie => {
-        /* First t-shirt added separately with id for jump menu*/
+        /* First hoodie added separately with id for jump menu*/
         if(hoodie.type==="UCLan Hoodie (1) - Purple"){
             document.getElementById("clothes").innerHTML +=
                 "<div class='image' id='hoodies'>"
@@ -737,7 +737,7 @@ hoodies.forEach(
                 + "</p>"
                 + "<p><b>" + hoodie.price + "</b> </p>"
                 + "<div class='buyButton'>"
-                + "<button onclick='buyFunction()'>Buy</button>"
+                + "<button onclick='buyFunction("+j+","+2+")'>Buy</button>"
                 + "</div>"
                 + "</div>";
         }
@@ -755,7 +755,7 @@ hoodies.forEach(
                 + "</p>"
                 + "<p><b>" + hoodie.price + "</b> </p>"
                 + "<div class='buyButton'>"
-                + "<button onclick='buyFunction()'>Buy</button>"
+                + "<button onclick='buyFunction("+j+","+2+")'>Buy</button>"
                 + "</div>"
                 + "</div>";
         }
@@ -764,11 +764,11 @@ hoodies.forEach(
     });
 
 /*Adding all jumpers*/
-/*k used as index for read more function*/
+/*k used as index for read more and buy functions*/
 var k=0;
 jumpers.forEach(
     jumper => {
-        /* First t-shirt added separately with id for jump menu*/
+        // First jumper added separately with id for jump menu
         if(jumper.type==="UCLan Logo Jumper (1) - Purple"){
             document.getElementById("clothes").innerHTML +=
                 "<div class='image' id='jumpers'>"
@@ -783,7 +783,7 @@ jumpers.forEach(
                 + "</p>"
                 + "<p><b>" + jumper.price + "</b> </p>"
                 + "<div class='buyButton'>"
-                + "<button onclick='buyFunction()'>Buy</button>"
+                + "<button onclick='buyFunction("+k+","+3+")'>Buy</button>"
                 + "</div>"
                 + "</div>";
         }
@@ -801,7 +801,7 @@ jumpers.forEach(
                 + "</p>"
                 + "<p><b>" + jumper.price + "</b> </p>"
                 + "<div class='buyButton'>"
-                + "<button onclick='buyFunction()'>Buy</button>"
+                + "<button onclick='buyFunction("+k+","+3+")'>Buy</button>"
                 + "</div>"
                 + "</div>";
         }
@@ -810,20 +810,38 @@ jumpers.forEach(
     });
 
 
-/*Save to session storage function*/
-function itemFunction(num,type){
+//Save to session storage function
+function itemFunction(index,type){
     if(type===1) {
-        sessionStorage.setItem('item', JSON.stringify(tShirts[num]));
+        sessionStorage.setItem('item', JSON.stringify(tShirts[index]));
     }
     else if(type===2){
-        sessionStorage.setItem('item', JSON.stringify(hoodies[num]));
+        sessionStorage.setItem('item', JSON.stringify(hoodies[index]));
     }
     else if(type===3){
-        sessionStorage.setItem('item', JSON.stringify(jumpers[num]));
+        sessionStorage.setItem('item', JSON.stringify(jumpers[index]));
     }
 }
+//adding array of products to local storage from products page
+function buyFunction(index,type){
+    var storedProduct;
 
-function buyFunction(){
-    alert('Item added to cart!')
-
+    if(localStorage.product){
+        storedProduct = JSON.parse(localStorage.product);
+    }else{
+        storedProduct = new Array();
+    }
+    if(type===1) {
+        storedProduct.push(tShirts[index]);
+        localStorage.product = JSON.stringify(storedProduct);
+    }
+    else if(type===2){
+        storedProduct.push(hoodies[index]);
+        localStorage.product = JSON.stringify(storedProduct);
+    }
+    else if(type===3){
+        storedProduct.push(jumpers[index]);
+        localStorage.product = JSON.stringify(storedProduct);
+    }
+    alert('Item added to cart!');
 }
